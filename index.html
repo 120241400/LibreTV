@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简约搜索主页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f5f7fa; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; width: 100%; }
+        header { text-align: center; padding: 30px 0; }
+        h1 { font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px; }
+        .subtitle { color: #7f8c8d; font-size: 1.1rem; margin-bottom: 40px; }
+        .search-section { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .search-form { display: flex; max-width: 800px; margin: 0 auto; }
+        .search-input { flex: 1; padding: 16px 20px; font-size: 1rem; border: 2px solid #e0e6ed; border-radius: 8px 0 0 8px; outline: none; transition: border-color 0.3s; }
+        .search-input:focus { border-color: #3498db; }
+        .search-btn { background: #3498db; color: white; border: none; padding: 0 30px; border-radius: 0 8px 8px 0; font-size: 1rem; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+        .search-btn:hover { background: #2980b9; }
+        .buttons-section { margin: 40px 0; }
+        .section-title { text-align: center; font-size: 1.8rem; color: #2c3e50; margin-bottom: 30px; }
+        .buttons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .btn { display: flex; align-items: center; background: white; border-radius: 10px; padding: 20px; text-decoration: none; color: #333; box-shadow: 0 3px 10px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; border-left: 4px solid #3498db; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .btn-icon { width: 50px; height: 50px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 1.5rem; color: white; }
+        .btn-content { flex: 1; }
+        .btn-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 5px; }
+        .btn-desc { color: #7f8c8d; font-size: 0.9rem; }
+        footer { text-align: center; padding: 30px 0; margin-top: 40px; color: #7f8c8d; border-top: 1px solid #e0e6ed; }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .search-form { flex-direction: column; }
+            .search-input, .search-btn { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+            .buttons-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>简约搜索门户</h1>
+            <p class="subtitle">快速、简洁、高效地获取信息</p>
+        </header>
+        
+        <main>
+            <section class="search-section">
+                <form class="search-form" action="https://www.sogou.com/web" method="get" target="_blank">
+                    <input type="text" name="query" class="search-input" placeholder="输入关键词搜索..." required>
+                    <button type="submit" class="search-btn">搜狗搜索</button>
+                </form>
+            </section>
+            
+            <section class="buttons-section">
+                <h2 class="section-title">快速访问</h2>
+                <div class="buttons-grid">
+                    <a href="https://news.sogou.com" class="btn" target="_blank" style="border-left-color: #e74c3c;">
+                        <div class="btn-icon" style="background: #e74c3c;">📰</div>
+                        <div class="btn-content">
+                            <div class="btn-title">新闻资讯</div>
+                            <div class="btn-desc">浏览最新时事新闻</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://pic.sogou.com" class="btn" target="_blank" style="border-left-color: #2ecc71;">
+                        <div class="btn-icon" style="background: #2ecc71;">🖼️</div>
+                        <div class="btn-content">
+                            <div class="btn-title">图片搜索</div>
+                            <div class="btn-desc">探索高清图片素材</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://v.sogou.com" class="btn" target="_blank" style="border-left-color: #9b59b6;">
+                        <div class="btn-icon" style="background: #9b59b6;">🎬</div>
+                        <div class="btn-content">
+                            <div class="btn-title">视频内容</div>
+                            <div class="btn-desc">观看在线视频</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://map.sogou.com" class="btn" target="_blank" style="border-left-color: #f39c12;">
+                        <div class="btn-icon" style="background: #f39c12;">🗺️</div>
+                        <div class="btn-content">
+                            <div class="btn-title">地图服务</div>
+                            <div class="btn-desc">查找地点与导航</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://fanyi.sogou.com" class="btn" target="_blank" style="border-left-color: #1abc9c;">
+                        <div class="btn-icon" style="background: #1abc9c;">🌐</div>
+                        <div class="btn-content">
+                            <div class="btn-title">翻译工具</div>
+                            <div class="btn-desc">多语言翻译服务</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.sogou.com/docs/help.htm" class="btn" target="_blank" style="border-left-color: #34495e;">
+                        <div class="btn-icon" style="background: #34495e;">❓</div>
+                        <div class="btn-content">
+                            <div class="btn-title">帮助中心</div>
+                            <div class="btn-desc">使用指南与支持</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2023 简约搜索门户 | 基于搜狗搜索 | 纯HTML+CSS实现</p>
+        </footer>
+    </div>
+</body>
+</html>
